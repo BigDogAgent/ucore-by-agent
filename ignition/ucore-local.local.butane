@@ -3,8 +3,7 @@ version: 1.4.0
 
 # -------------------------------------------------------------------
 # User access
-# Generate password hash with: python3 -c 'import crypt; print(crypt.crypt("yourpassword"))'
-# Or on Fedora/RHEL:           openssl passwd -6 yourpassword
+# Generate password hash with: openssl passwd -6 yourpassword
 # -------------------------------------------------------------------
 passwd:
   users:
@@ -24,6 +23,18 @@ storage:
   directories:
     - path: /etc/ucore-autorebase
       mode: 0754
+  
+  files:
+    - path: /etc/hostname
+      mode: 0644
+      contents:
+        inline: ucore
+    
+    - path: /etc/ssh/sshd_config.d/99-password-auth.conf
+      mode: 0600
+      contents:
+        inline: |
+          PasswordAuthentication yes
 
 systemd:
   units:

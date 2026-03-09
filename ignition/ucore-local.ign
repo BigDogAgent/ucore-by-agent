@@ -23,6 +23,24 @@
         "path": "/etc/ucore-autorebase",
         "mode": 492
       }
+    ],
+    "files": [
+      {
+        "path": "/etc/hostname",
+        "contents": {
+          "compression": "",
+          "source": "data:,ucore"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/ssh/sshd_config.d/99-password-auth.conf",
+        "contents": {
+          "compression": "",
+          "source": "data:,PasswordAuthentication%20yes%0A"
+        },
+        "mode": 384
+      }
     ]
   },
   "systemd": {
