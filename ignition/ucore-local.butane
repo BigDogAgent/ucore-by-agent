@@ -3,8 +3,7 @@ version: 1.4.0
 
 # -------------------------------------------------------------------
 # User access
-# Generate password hash with: python3 -c 'import crypt; print(crypt.crypt("yourpassword"))'
-# Or on Fedora/RHEL:           openssl passwd -6 yourpassword
+# Generate password hash with: openssl passwd -6 yourpassword
 # -------------------------------------------------------------------
 passwd:
   users:
@@ -14,7 +13,7 @@ passwd:
         - sudo
       ssh_authorized_keys:
         - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMXJKNlkzkBw3AO8nO5TiR7wetqaFAMOQovGkjxlQYzq igor@aurora
-        password_hash: $6$4K3DiT1p1B/Av4b0$BgmhfQNz7tjBlGO1UT7e6pWNcziriVpt.aPeNCC/eahTYWCIvc1O7FhTQ0sb3fFMJxSUqJM.X6PYhne4PWNho. # uncomment if console login needed
+      password_hash: $6$4K3DiT1p1B/Av4b0$BgmhfQNz7tjBlGO1UT7e6pWNcziriVpt.aPeNCC/eahTYWCIvc1O7FhTQ0sb3fFMJxSUqJM.X6PYhne4PWNho. # uncomment if console login needed
 
 # -------------------------------------------------------------------
 # Autorebase: transitions stock Fedora CoreOS → your custom OCI image
